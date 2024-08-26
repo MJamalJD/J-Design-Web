@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/logo1.jpg-HD.png" type="image">
+    <title>Application Submitted - J-Design Creative Web Solutions</title>
+    <style>
+        :root {
+            --primary-color: #6366F1;
+            --accent-color: #3f83f8;
+            --text-color: #333333;
+            --background-color: #ffffff;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--background-color);
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .success-container {
+            text-align: center;
+        }
+
+        .success-message {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin: 1.5rem 0;
+        }
+
+        .back-button {
+            background-color: var(--primary-color);
+            color: var(--background-color);
+            border: none;
+            border-radius: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .back-button:hover {
+            background-color: var(--accent-color);
+            transform: scale(1.02);
+        }
+
+        .back-button:active {
+            background-color: var(--primary-color);
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body>
+    <div class="success-container">
+        <img src="https://clipart-library.com/image_gallery/126705.png" alt="tick" width="130px" height="130px">
+        <p class="success-message">Your application has been submitted successfully!</p>
+        <a href="Home.html" class="back-button">Back to Home</a>
+    </div>
+</body>
+</html>

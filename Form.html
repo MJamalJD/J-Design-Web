@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/logo1.jpg-HD.png" type="image">
+    <title>Apply for Job - J-Design Creative Web Solutions</title>
+    <style>
+        :root {
+            --primary-color: #6366F1;
+            --accent-color: #3f83f8;
+            --text-color: #333333;
+            --link-color: #2563eb;
+            --background-color: #ffffff;
+            --light-gray: #f0f0f0;
+            --gray: #808080;
+            --dark-gray: #555;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--background-color);
+            padding: 0;
+            margin: 0;
+        }
+
+        .job-application-form {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: linear-gradient(135deg, var(--light-gray), var(--background-color));
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-title {
+            font-size: 1.75rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            text-align: center;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 0.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text-color);
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .form-input, .form-textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid var(--gray);
+            border-radius: 0.5rem;
+            box-sizing: border-box;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .form-input:focus, .form-textarea:focus {
+            border-color: var(--link-color);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            outline: none;
+        }
+
+        .form-textarea {
+            resize: vertical;
+        }
+
+        .form-submit-button {
+            background-color: var(--primary-color);
+            color: var(--background-color);
+            border: none;
+            border-radius: 0.5rem;
+            padding: 0.75rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+            width: 100%;
+        }
+
+        .form-submit-button:hover {
+            background-color: var(--accent-color);
+            transform: scale(1.02);
+        }
+
+        .form-submit-button:active {
+            background-color: var(--primary-color);
+            transform: scale(0.98);
+        }
+
+        .success-message {
+            display: none;
+            padding: 1rem;
+            background-color: var(--light-gray);
+            border-radius: 0.5rem;
+            text-align: center;
+            font-size: 1.1rem;
+            color: var(--text-color);
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="job-application-form">
+        <h2 class="form-title">Apply for Job</h2>
+        <form id="application-form">
+            <div class="form-group">
+                <label for="name" class="form-label">Full Name</label>
+                <input type="text" id="name" name="name" class="form-input" required>
+            </div>
+            <div class="form-group">
+                <label for="email" class="form-label">Email Address</label>
+                <input type="email" id="email" name="email" class="form-input" required>
+            </div>
+            <div class="form-group">
+                <label for="phone" class="form-label">Phone Number</label>
+                <input type="tel" id="phone" name="phone" class="form-input" required>
+            </div>
+            <div class="form-group">
+                <label for="address" class="form-label">Address</label>
+                <input type="text" id="address" name="address" class="form-input">
+            </div>
+            <div class="form-group">
+                <label for="linkedin" class="form-label">LinkedIn Profile</label>
+                <input type="url" id="linkedin" name="linkedin" class="form-input">
+            </div>
+            <div class="form-group">
+                <label for="resume" class="form-label">Resume (PDF)</label>
+                <input type="file" id="resume" name="resume" accept=".pdf" class="form-input" required>
+            </div>
+            <div class="form-group">
+                <label for="cover-letter" class="form-label">Cover Letter</label>
+                <textarea id="cover-letter" name="cover-letter" rows="4" class="form-textarea" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="portfolio" class="form-label">Portfolio (Optional)</label>
+                <input type="url" id="portfolio" name="portfolio" class="form-input">
+            </div>
+            <div class="form-group">
+                <label for="availability" class="form-label">Availability</label>
+                <input type="text" id="availability" name="availability" class="form-input" placeholder="e.g., Immediately, 2 weeks notice">
+            </div>
+            <div class="form-group">
+                <label for="education" class="form-label">Highest Level of Education</label>
+                <input type="text" id="education" name="education" class="form-input">
+            </div>
+            <div class="form-group">
+                <label for="skills" class="form-label">Relevant Skills</label>
+                <textarea id="skills" name="skills" rows="3" class="form-textarea" placeholder="e.g., Programming, Design, Project Management"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="certifications" class="form-label">Certifications (Optional)</label>
+                <input type="text" id="certifications" name="certifications" class="form-input">
+            </div>
+            <div class="form-group">
+                <label for="languages" class="form-label">Languages Spoken</label>
+                <input type="text" id="languages" name="languages" class="form-input" placeholder="e.g., English, Spanish">
+            </div>
+            <div class="form-group">
+                <label for="referrals" class="form-label">Referrals (Optional)</label>
+                <input type="text" id="referrals" name="referrals" class="form-input">
+            </div>
+            <div class="form-group">
+                <label for="expected-salary" class="form-label">Expected Salary</label>
+                <input type="text" id="expected-salary" name="expected-salary" class="form-input" placeholder="e.g., $50,000 - $60,000">
+            </div>
+            <div class="form-group">
+                <label for="why-join" class="form-label">Why Do You Want to Join Our Company?</label>
+                <textarea id="why-join" name="why-join" rows="4" class="form-textarea" required></textarea>
+            </div>
+            <button type="submit" class="form-submit-button">Submit Application</button>
+        </form>
+        <div id="success-message" class="success-message">
+            Your application has been submitted successfully!
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('application-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            // Optionally: Perform form validation here
+
+            // Show the success message
+            document.querySelector('.success-message').style.display = 'block';
+
+            // Redirect to the success page after a delay
+            setTimeout(function() {
+                window.location.href = 'success.html'; // Redirect to success page
+            }, 2000); // Delay before redirect
+        });
+    </script>
+</body>
+</html>

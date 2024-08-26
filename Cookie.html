@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/logo1.jpg-HD.png" type="image">
+    <title>J-Design Creative Web Solutions</title>
+    <style>
+        :root {
+            --primary-color: #6366F1;
+            --accent-color: #3f83f8;
+            --text-color: #333333;
+            --background-color: #ffffff;
+            --light-gray: #f0f0f0;
+            --dark-gray: #555;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--background-color);
+            margin: 0;
+            padding: 0;
+            color: var(--text-color);
+        }
+
+        /* Cookie Banner Styles */
+        .cookie-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: var(--light-gray);
+            padding: 1rem;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            z-index: 1000;
+            box-sizing: border-box;
+        }
+
+        .cookie-banner p {
+            margin: 0;
+            font-size: 1rem;
+            color: var(--text-color);
+            flex: 1;
+        }
+
+        .cookie-banner a {
+            color: var(--primary-color);
+            text-decoration: underline;
+        }
+
+        .cookie-banner button {
+            background-color: var(--primary-color);
+            color: var(--background-color);
+            border: none;
+            border-radius: 0.5rem;
+            padding: 0.5rem 1rem;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+            flex-shrink: 0;
+        }
+
+        .cookie-banner button:hover {
+            background-color: var(--accent-color);
+            transform: scale(1.02);
+        }
+
+        .cookie-banner button:active {
+            background-color: var(--primary-color);
+            transform: scale(0.98);
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Your website content goes here -->
+
+    <!-- Cookie Banner -->
+    <div class="cookie-banner" id="cookie-banner">
+        <p>We use cookies to enhance your experience on our website. <a href="Cookie Setting.html">Learn more</a>.</p>
+        <button onclick="acceptCookies()">Accept</button>
+    </div>
+
+    <script>
+        function acceptCookies() {
+            document.getElementById('cookie-banner').style.display = 'none';
+            document.cookie = "cookieConsent=true; path=/; max-age=" + 60 * 60 * 24 * 365;
+            // You can also trigger the enabling of non-essential cookies here.
+        }
+
+        function checkCookieConsent() {
+            const cookies = document.cookie.split(';').reduce((acc, cookie) => {
+                const [name, value] = cookie.split('=').map(c => c.trim());
+                acc[name] = value;
+                return acc;
+            }, {});
+
+            if (cookies.cookieConsent) {
+                document.getElementById('cookie-banner').style.display = 'none';
+            }
+        }
+
+        function enableCookies() {
+            if (document.cookie.includes("cookieConsent=true")) {
+                // Enable essential cookies
+                // Example: Google Analytics
+                // You can add scripts for other cookies here
+
+                // Check for specific cookies settings
+                if (document.cookie.includes("performanceCookies=true")) {
+                    // Enable performance cookies
+                }
+
+                if (document.cookie.includes("functionalCookies=true")) {
+                    // Enable functional cookies
+                }
+
+                if (document.cookie.includes("targetingCookies=true")) {
+                    // Enable targeting cookies
+                }
+            }
+        }
+
+        function saveCookieSettings() {
+            const performanceCookies = document.getElementById('performance-cookies').checked;
+            const functionalCookies = document.getElementById('functional-cookies').checked;
+            const targetingCookies = document.getElementById('targeting-cookies').checked;
+
+            document.cookie = `performanceCookies=${performanceCookies}; path=/; max-age=${60 * 60 * 24 * 365}`;
+            document.cookie = `functionalCookies=${functionalCookies}; path=/; max-age=${60 * 60 * 24 * 365}`;
+            document.cookie = `targetingCookies=${targetingCookies}; path=/; max-age=${60 * 60 * 24 * 365}`;
+
+            alert('Your settings have been saved.');
+            // Optionally, reload the page or redirect to another page
+        }
+
+        window.onload = () => {
+            checkCookieConsent();
+            enableCookies();
+        };
+    </script>
+
+</body>
+</html>

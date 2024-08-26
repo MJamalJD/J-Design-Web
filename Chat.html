@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/logo1.jpg-HD.png" type="image">
+    <title>Live Chat Coming Soon - J-Design Creative Web Solutions</title>
+    <style>
+        :root {
+            --primary-color: #6366F1;
+            --accent-color: #3f83f8;
+            --text-color: #333333;
+            --background-color: #ffffff;
+            --light-gray: #f0f0f0;
+            --gray: #808080;
+            --dark-gray: #555;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--background-color);
+            margin: 0;
+            padding: 0;
+            color: var(--text-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        .coming-soon-container {
+            max-width: 600px;
+            padding: 2rem;
+            background-color: var(--light-gray);
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .coming-soon-title {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .coming-soon-message {
+            font-size: 1.2rem;
+            color: var(--dark-gray);
+            margin-bottom: 2rem;
+        }
+
+        .home-button {
+            background-color: var(--primary-color);
+            color: var(--background-color);
+            border: none;
+            border-radius: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s, transform 0.2s;
+            display: inline-block;
+        }
+
+        .home-button:hover {
+            background-color: var(--accent-color);
+            transform: scale(1.02);
+        }
+
+        .home-button:active {
+            background-color: var(--primary-color);
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body>
+    <div class="coming-soon-container">
+        <img src="https://cdn-icons-png.flaticon.com/512/9165/9165147.png" alt="live chat" height="150px" width="150px">
+        <h1 class="coming-soon-title">Live Chat Coming Soon</h1>
+        <p class="coming-soon-message">
+            We are working hard to bring you a new live chat feature. Stay tuned for updates!
+        </p>
+        <a href="Home.html" class="home-button">Back to Home</a>
+    </div>
+</body>
+</html>
